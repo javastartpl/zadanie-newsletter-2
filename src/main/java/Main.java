@@ -5,9 +5,10 @@ public class Main {
 
         int[] testTable = new int[]{0};
 
-        TableProcessor.printTable(testTable);
+        TableProcessor processor = new TableProcessor();
+        processor.printTable(testTable);
 
-        System.out.println(TableProcessor.processTable(testTable));
+        System.out.println(processor.processTable(testTable));
 
 
     }

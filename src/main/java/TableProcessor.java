@@ -2,7 +2,7 @@ import java.util.*;
 
 public class TableProcessor {
 
-    public static String processTable(int[] nums) throws Exception {
+    public String processTable(int[] nums) throws TooSmallArrayException {
 
         throwExceptionsIfNeeded(nums);
 
@@ -41,7 +41,7 @@ public class TableProcessor {
     }
 
 
-    private static void creatingSetsOfBiggestAndSmallestPairs(int[] nums, Integer[] smallestPair, int sumSmallest, Integer[] biggestPair, int sumBiggest, Set<Integer[]> smallestPairsSet, Set<Integer[]> biggestPairsSet) {
+    private void creatingSetsOfBiggestAndSmallestPairs(int[] nums, Integer[] smallestPair, int sumSmallest, Integer[] biggestPair, int sumBiggest, Set<Integer[]> smallestPairsSet, Set<Integer[]> biggestPairsSet) {
         for (int i = 2; i < nums.length; i++) {
             int sum = nums[i - 1] + nums[i];
             Integer[] testAr = new Integer[]{nums[i - 1], nums[i]};
@@ -54,16 +54,17 @@ public class TableProcessor {
         }
     }
 
-    private static void throwExceptionsIfNeeded(int[] nums) throws Exception {
+    public void throwExceptionsIfNeeded(int[] nums) throws TooSmallArrayException {
         if (nums.length == 0) {
             throw new NoSuchElementException("No elements found");
         }
         if (nums.length < 2) {
-            throw new Exception("Not enough elements to form a pair");
+            throw new TooSmallArrayException("Not enough elements to form a pair");
         }
+
     }
 
-    public static void printTable(int[] nums) {
+    public void printTable(int[] nums) {
         StringBuilder sb = new StringBuilder();
         for (int i : nums) {
             sb.append(i);
