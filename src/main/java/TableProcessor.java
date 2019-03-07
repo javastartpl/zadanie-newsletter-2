@@ -33,8 +33,6 @@ public class TableProcessor {
         Set<Integer[]> biggestPairsSet = new HashSet<>();
         biggestPairsSet.add(biggestPair);
 
-
-        // FINDING SETS OF SMALLEST AND BIGGEST NUMBERS
         creatingSetsOfBiggestAndSmallestPairs(nums, smallestPair, sumSmallest, biggestPair, sumBiggest, smallestPairsSet, biggestPairsSet);
 
         return ResultCreator.finalStringResult(smallestPairsSet, biggestPairsSet);
