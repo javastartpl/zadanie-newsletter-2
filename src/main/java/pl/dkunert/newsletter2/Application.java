@@ -12,6 +12,6 @@ public class Application {
         ArrayDetailsResolvingService arrayDetailsResolvingService = new ArrayDetailsResolvingService();
 
         ArrayPairsDetails result = arrayDetailsResolvingService.findLowestAndHighestPairs(Arrays.asList(args).stream().mapToInt(Integer::parseInt).toArray());
-        System.out.println(result); // ArrayPairsDetails{lowestPairs=[IntTuple{first=-5, second=0}, IntTuple{first=-5, second=0}], highestPairs=[IntTuple{first=0, second=10}, IntTuple{first=5, second=5}]}
+        System.out.println(result); // ArrayPairsDetails{lowestPairs=[IntTuple{first=-5, second=0}], highestPairs=[IntTuple{first=5, second=5}, IntTuple{first=0, second=10}]}
     }
 }
